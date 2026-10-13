@@ -1,0 +1,40 @@
+{
+  "model_name": "Pune Waterlogging Risk Baseline Estimator",
+  "model_version": "v1.0.0-demo",
+  "model_type": "Hybrid Hydrological Heuristic + Scikit-Learn RandomForestClassifier",
+  "random_seed": 42,
+  "is_demo_data": true,
+  "status": "Demonstration baseline ready for verified observational datasets",
+  "feature_names": [
+    "rainfall_obs_mm",
+    "rainfall_forecast_mm",
+    "elevation_m",
+    "slope_pct",
+    "drainage_score",
+    "impervious_surface_pct",
+    "is_underpass",
+    "soil_saturation_pct"
+  ],
+  "feature_importances": {
+    "rainfall_obs_mm": 0.2233,
+    "rainfall_forecast_mm": 0.092,
+    "elevation_m": 0.053,
+    "slope_pct": 0.1068,
+    "drainage_score": 0.2876,
+    "impervious_surface_pct": 0.0427,
+    "is_underpass": 0.1201,
+    "soil_saturation_pct": 0.0745
+  },
+  "classes": [
+    "Low",
+    "Moderate",
+    "High",
+    "Severe"
+  ],
+  "known_limitations": [
+    "Trained on illustrative catchment scenarios; requires empirical calibration with PMC ground-sensor telemetry.",
+    "Predictions over 1-6 hour horizons assume linear rainfall dispersion without hydrodynamic pipe flow simulation.",
+    "Micro-topographical depressions smaller than 10m grid are not resolved in standard digital elevation models.",
+    "Does not replace official municipal or disaster management emergency directives."
+  ]
+}
